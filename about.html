@@ -7,6 +7,7 @@
   <link rel="icon" type="image/png" href="./assets/images/favicon-160x160.png" sizes="160x160">
   <link rel="icon" type="image/png" href="./assets/images/favicon-196x196.png" sizes="196x196">
   <title>Coope | about</title>
+  <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1.0">
   <style>
     html {
       background: #fff;
@@ -29,7 +30,7 @@
     }
     
     .nav-logo-link {
-      display: block;
+      display: table;
       margin-left: -1em;
       padding-left: 1em;
       height: 10em;
@@ -38,18 +39,17 @@
       transition: all ease .325s;
     }
     
+    .nav-logo-link-inner {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    
     .nav-logo-link:hover {
       opacity: .65;
     }
     
     .nav-logo {
-      position: absolute;
-      margin: auto;
-      top: 0;
-      bottom: 0;
       height: 4em;
-      width: auto;
-      display: block;
     }
     
     .nav-links {
@@ -131,6 +131,25 @@
         height: 2.4em;
       }
     }
+    
+    @media(max-width:520px) {
+      .nav-logo {
+        height: 1.8em;
+      }
+      .wrapper {
+        padding: 0 1em;
+      }
+      .nav-links {
+        letter-spacing: .1em;
+      }
+      .nav-logo-link {
+        height: 7em;
+      }
+      .nav-links a {
+        height: 7em;
+        line-height: 7em;
+      }
+    }
   </style>
 </head>
 <body>
@@ -139,7 +158,9 @@
       <div class="nav">
         <div class="nav-left">
           <a class="nav-logo-link" href="./">
-            <img class="nav-logo" src="assets/images/logo-coope--bleed-no.svg" >
+            <div class="nav-logo-link-inner">
+              <img class="nav-logo" src="assets/images/logo-coope--bleed-no.svg" >
+            </div>
           </a>
         </div>
         <div class="nav-right">
